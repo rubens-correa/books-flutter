@@ -1,0 +1,1 @@
+ /home/dev/books-flutter/.dart_tool/flutter_build/7eac6725d6504d84edbe957e8e3a0894/native_assets.yaml: 
