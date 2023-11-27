@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'books_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,15 +17,15 @@ class _HomePageState extends State<HomePage> {
     "Biografias"
   ];
 
+  List<String> tmp = [""];
+
   int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+      body: SingleChildScrollView(
         padding: EdgeInsets.only(top: 42),
         child: Column(
           children: <Widget>[
@@ -34,14 +35,14 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(left: 24, right: 24),
                   child: Text(
                     "Livros",
-                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(
                   "Favoritos",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 14,
+                      fontSize: 16,
                       color: Colors.grey[400]),
                 )
               ],
@@ -78,6 +79,13 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
+            ),
+            ListView.builder(
+              itemCount: categorias.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return BookPage();
+              },
             )
           ],
         ),
