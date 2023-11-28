@@ -53,7 +53,7 @@ class BookPage extends StatelessWidget {
                     Align(
                         alignment: Alignment.centerRight,
                         child: Icon(
-                          Icons.favorite,
+                          Icons.arrow_forward_ios,
                           color: Colors.grey,
                         ))
                   ],
