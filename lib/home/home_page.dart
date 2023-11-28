@@ -25,8 +25,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 42),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 42, left: 24),
         child: Column(
           children: <Widget>[
             Row(
@@ -80,12 +80,15 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
-            ListView.builder(
-              itemCount: categorias.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return BookPage();
-              },
+            Expanded(
+              child: Container(
+                child: ListView.builder(
+                  itemCount: categorias.length,
+                  itemBuilder: (context, index) {
+                    return BookPage();
+                  },
+                ),
+              ),
             )
           ],
         ),
